@@ -1,729 +1,1732 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <base target="_top">
-    <meta charset="utf-8">
-    <title>S D LATKAR Profile</title>
-    <meta name="description" content="Profile page of Mr. Sachin D. Latkar containing education, work experience, memberships, subjects taught, papers published, articles, books, courses completed, lectures, conferences, workshops, administrative activities, co-curricular activities, and extra-curricular activities.">
-    
-    <style media="screen">
-      body {
-        background-color: white;
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        line-height: 1.5;
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Sachin D. Latkar — Academic Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #0f1923;
+      --ink-mid: #1e2d3d;
+      --teal: #0d7377;
+      --teal-mid: #14a085;
+      --teal-pale: #e6f7f5;
+      --gold: #b8860b;
+      --gold-light: #f0c040;
+      --gold-pale: #fdf8ec;
+      --white: #ffffff;
+      --off: #f5f7f9;
+      --border: #e2e8ef;
+      --muted: #6b7a8d;
+      --green: #1a7a4a;
+      --green-pale: #e8f5ee;
+      --purple: #5c3d8f;
+      --purple-pale: #f0ebfc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background: #eef1f5;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13,115,119,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 64px 44px 56px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 52px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar-wrap {
+      position: relative;
+    }
+
+    .avatar-circle {
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: white;
+      border: 4px solid rgba(255,255,255,0.9);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.08), 0 0 0 8px rgba(13,115,119,0.2);
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: var(--gold);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      color: white;
+    }
+
+    .hero-dept {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal-mid);
+      margin-bottom: 10px;
+    }
+
+    .hero-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid;
+    }
+
+    .chip-teal {
+      background: rgba(13,115,119,0.2);
+      border-color: rgba(13,115,119,0.5);
+      color: #5dd9d4;
+    }
+
+    .chip-white {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .topnav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 44px;
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .topnav-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tnav {
+      padding: 15px 16px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+      border-bottom: 2.5px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tnav:hover {
+      color: var(--teal);
+      border-bottom-color: var(--teal);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      position: sticky;
+      top: 70px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .ch {
+      padding: 16px 20px 13px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ch-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .ch h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .cb {
+      padding: 16px 20px;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sec-head h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ink-mid);
+    }
+
+    .sec-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--teal), transparent);
+    }
+
+    .sec-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .sr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .sr:last-child {
+      border-bottom: none;
+    }
+
+    .sr-l {
+      color: var(--muted);
+    }
+
+    .sr-r {
+      font-weight: 600;
+      color: var(--ink);
+      text-align: right;
+      font-size: 13px;
+    }
+
+    .hbox {
+      background: var(--ink);
+      border-radius: 10px;
+      padding: 18px 16px;
+      color: white;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .hbox-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--teal-mid);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .hbox-sub {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .plink {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 500;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+
+    .plink:last-child {
+      border-bottom: none;
+    }
+
+    .plink:hover {
+      color: var(--ink);
+      padding-left: 4px;
+      text-decoration: none;
+    }
+
+    .plink-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .exp-tag {
+      background: var(--teal-pale);
+      color: var(--teal);
+      border: 1px solid rgba(13,115,119,0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .philosophy {
+      background: linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 100%);
+      border-radius: 16px;
+      padding: 32px 36px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy::before {
+      content: "“";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 160px;
+      color: rgba(13,115,119,0.25);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .philosophy-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .phil-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .phil-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--teal-mid);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .phil-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .spec-card {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .spec-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .spec-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 4px;
+    }
+
+    .spec-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .etable,
+    .wtable {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .etable thead tr {
+      background: var(--ink);
+    }
+
+    .wtable thead tr {
+      background: var(--ink-mid);
+    }
+
+    .etable th,
+    .wtable th {
+      padding: 11px 14px;
+      text-align: left;
+      color: white;
+      font-weight: 500;
+      font-size: 11.5px;
+      letter-spacing: 0.3px;
+    }
+
+    .etable td,
+    .wtable td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .etable tbody tr:nth-child(odd) td,
+    .wtable tbody tr:nth-child(odd) td {
+      background: var(--off);
+    }
+
+    .etable tbody tr:nth-child(even) td,
+    .wtable tbody tr:nth-child(even) td {
+      background: white;
+    }
+
+    .badge-dist {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-fc {
+      display: inline-block;
+      background: #e8f0fd;
+      color: #1a56c4;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-note {
+      display: inline-block;
+      background: var(--purple-pale);
+      color: var(--purple);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 4px;
+    }
+
+    .timeline {
+      padding-left: 32px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--teal-mid), rgba(13,115,119,0.2));
+      border-radius: 2px;
+    }
+
+    .titem {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .titem:last-child {
+      margin-bottom: 0;
+    }
+
+    .tdot {
+      position: absolute;
+      left: -26px;
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2.5px solid white;
+    }
+
+    .tdot-teal {
+      background: var(--teal);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+
+    .tdot-gray {
+      background: #94a3b8;
+      box-shadow: 0 0 0 2px #94a3b8;
+    }
+
+    .tperiod {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .torg {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 4px;
+    }
+
+    .trole {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+
+    .tackiev {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .tachiev-item {
+      background: var(--teal-pale);
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(13,115,119,0.15);
+    }
+
+    .texp {
+      display: inline-block;
+      background: var(--off);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+
+    .papers {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .paper {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+      padding: 15px 18px;
+    }
+
+    .paper-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    .paper-venue {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 9px;
+      line-height: 1.4;
+    }
+
+    .paper-tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .ptag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 9px;
+    }
+
+    .ptag-j {
+      background: #e8f4fd;
+      color: #1565c0;
+    }
+
+    .ptag-c {
+      background: #fff3e0;
+      color: #c84a04;
+    }
+
+    .ptag-y {
+      background: var(--off);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .ptag-new {
+      background: var(--green-pale);
+      color: var(--green);
+    }
+
+    .articles {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .art-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: all 0.2s;
+    }
+
+    .art-link:hover {
+      background: var(--teal-pale);
+      border-color: var(--teal);
+      transform: translateX(4px);
+      text-decoration: none;
+    }
+
+    .art-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--teal-mid);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .art-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .art-lang {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .art-arr {
+      color: var(--teal);
+      font-size: 18px;
+    }
+
+    .mems {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mem {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .mem-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--ink);
+      color: var(--teal-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .mem-org {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 2px;
+    }
+
+    .mem-id {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .courses {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .course {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 15px;
+      background: var(--green-pale);
+      border: 1px solid rgba(26,122,74,0.15);
+      border-radius: 9px;
+      transition: all 0.2s;
+    }
+
+    .course:hover {
+      background: #d4ede0;
+      transform: translateX(4px);
+      text-decoration: none;
+    }
+
+    .c-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .c-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .c-provider {
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .conf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 14px;
+    }
+
+    .conf {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--teal);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .conf-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 7px;
+      line-height: 1.4;
+    }
+
+    .conf-detail {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .acts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .act {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--off);
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.5;
+      border: 1px solid var(--border);
+    }
+
+    .act-bul {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .sub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 9px;
+    }
+
+    .sub {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      transition: all 0.2s;
+    }
+
+    .sub:hover {
+      background: var(--teal-pale);
+      border-left-color: var(--ink);
+    }
+
+    .callout {
+      background: var(--gold-pale);
+      border: 1px solid rgba(184,134,11,0.2);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    .callout strong {
+      color: var(--gold);
+    }
+
+    .dur {
+      background: #e8f0fd;
+      color: #1a56c4;
+      padding: 2px 8px;
+      border-radius: 9px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .dur.iit {
+      background: var(--green-pale);
+      color: var(--green);
+    }
+
+    .sub-h {
+      font-family: "Outfit", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 24px 0 12px;
+      padding-left: 2px;
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.5);
+      padding: 28px;
+      text-align: center;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    footer strong {
+      color: var(--teal-mid);
+    }
+
+    @media (max-width: 920px) {
+      .page {
+        grid-template-columns: 1fr;
+        padding: 28px 20px;
       }
 
-      h1 {
-        color: black;
+      .sidebar {
+        position: static;
       }
 
-      h2 {
-        color: green;
+      .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      table, th, tr, td {
-        border: 1px solid black;
-        border-collapse: collapse;
+      .spec-grid {
+        grid-template-columns: 1fr;
       }
 
-      th, td {
-        padding: 6px;
-        text-align: left;
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 44px 24px 36px;
       }
 
-      .top-rectangle {
-        display: flex;
+      .hero-chips {
         justify-content: center;
-        align-items: center;
-        height: 125px;
-        background-color: #ccffcc;
       }
 
-      img.passport-photo {
-        position: absolute;
-        top: 17px;
-        right: 17px;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border: 2px solid black;
-        border-radius: 50%;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      .hero-name {
+        font-size: 38px;
       }
-    </style>
-  </head>
 
-  <body>
-    <div class="top-rectangle">
-      <h1>Mr. Sachin D. Latkar Profile</h1>
+      .avatar-circle {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-name {
+        font-size: 30px;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .etable,
+      .wtable {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <img class="avatar-circle" src="my-passport-photo.jpg" alt="Prof. Sachin D. Latkar">
+      <span class="avatar-badge">31+ Yrs</span>
     </div>
 
-    <div>
-      <img class="passport-photo" src="my-passport-photo.jpg" alt="Sachin D. Latkar Passport Photo">
+    <div class="hero-content">
+      <p class="hero-dept">Academic Portfolio</p>
+      <h1 class="hero-name">Mr. Sachin D. Latkar</h1>
+
+      <p class="hero-subtitle">
+        Electronics &amp; Communication Engineer · AI/ML Specialist · Academic Leader<br>
+        Gharda Institute of Technology, Lavel, Maharashtra
+      </p>
+
+      <div class="hero-chips">
+        <span class="chip chip-teal">🎓 PG in AI &amp; ML — IIIT Lucknow</span>
+        <span class="chip chip-white">ISTE Life Member</span>
+        <span class="chip chip-white">IAENG Member</span>
+        <span class="chip chip-white">7 Sakal Articles</span>
+        <span class="chip chip-white">5 Research Papers</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a href="#summary" class="tnav">Profile</a>
+    <a href="#education" class="tnav">Education</a>
+    <a href="#experience" class="tnav">Experience</a>
+    <a href="#research" class="tnav">Research</a>
+    <a href="#teaching" class="tnav">Teaching</a>
+    <a href="#training" class="tnav">FDPs &amp; Training</a>
+    <a href="#articles" class="tnav">Articles</a>
+    <a href="#membership" class="tnav">Membership</a>
+    <a href="#activities" class="tnav">Activities</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <aside class="sidebar">
+
+    <div class="card">
+      <div class="ch">
+        <div class="ch-icon" style="background:#e6f7f5;">📊</div>
+        <h3>Career Summary</h3>
+      </div>
+      <div class="cb">
+        <div class="hbox">
+          <div class="hbox-num">31</div>
+          <div class="hbox-sub">Years of Experience</div>
+        </div>
+        <div class="sr"><span class="sr-l">Research Papers</span><span class="sr-r">5</span></div>
+        <div class="sr"><span class="sr-l">Sakal Articles</span><span class="sr-r">7</span></div>
+        <div class="sr"><span class="sr-l">Subjects Taught</span><span class="sr-r">26</span></div>
+        <div class="sr"><span class="sr-l">FDPs / STTPs</span><span class="sr-r">26</span></div>
+        <div class="sr"><span class="sr-l">Conferences</span><span class="sr-r">3</span></div>
+        <div class="sr"><span class="sr-l">Courses Completed</span><span class="sr-r">3</span></div>
+        <div class="sr"><span class="sr-l">Professional Bodies</span><span class="sr-r">3</span></div>
+      </div>
     </div>
 
-    <h2>LinkedIn Profile Link:</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/sd-l-bab7953b6" target="_blank">
-        Click here to open LinkedIn Profile
-      </a>
-    </p>
+    <div class="card">
+      <div class="ch">
+        <div class="ch-icon" style="background:#e6f7f5;">🏛️</div>
+        <h3>Institutional Association</h3>
+      </div>
+      <div class="cb">
+        <div class="sr"><span class="sr-l">Institute</span><span class="sr-r">GIT, Lavel</span></div>
+        <div class="sr"><span class="sr-l">Department</span><span class="sr-r">CSE (AI &amp; ML)</span></div>
+        <div class="sr"><span class="sr-l">At GIT Since</span><span class="sr-r">2009</span></div>
+        <div class="sr"><span class="sr-l">Affiliation</span><span class="sr-r">University of Mumbai</span></div>
+        <div class="sr"><span class="sr-l">Status</span><span class="sr-r" style="color:var(--green);">● Active</span></div>
+      </div>
+    </div>
 
-    <h2>Personal Website Link:</h2>
-    <p>
-      <a href="https://sdlatkar.github.io/profile/" target="_blank">
-        Click here to open Personal Website
-      </a>
-    </p>
+    <div class="card">
+      <div class="ch">
+        <div class="ch-icon" style="background:#f0ebfc;">🎯</div>
+        <h3>Areas of Expertise</h3>
+      </div>
+      <div class="cb">
+        <div class="exp-tags">
+          <span class="exp-tag">Artificial Intelligence</span>
+          <span class="exp-tag">Machine Learning</span>
+          <span class="exp-tag">Deep Learning</span>
+          <span class="exp-tag">Computer Networks</span>
+          <span class="exp-tag">Wireless Networks</span>
+          <span class="exp-tag">Image Processing</span>
+          <span class="exp-tag">IoT</span>
+          <span class="exp-tag">Satellite Communication</span>
+          <span class="exp-tag">Data Warehousing</span>
+          <span class="exp-tag">Python Programming</span>
+          <span class="exp-tag">MATLAB</span>
+          <span class="exp-tag">Academic Leadership</span>
+        </div>
+      </div>
+    </div>
 
-    <h2>Education:</h2>
-    <table>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Standard</th>
-        <th>School/College/University</th>
-        <th>Marks/CGPA</th>
-        <th>Remarks</th>
-        <th>Period</th>
-      </tr>
-      <tr>
-        <td>01</td>
-        <td>SSC</td>
-        <td>Adarsh Vidyalaya, Deoghar</td>
-        <td>88%</td>
-        <td>First Class with Distinction</td>
-        <td>1986-87</td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>HSC</td>
-        <td>The New College, Kolhapur</td>
-        <td>90.33%</td>
-        <td>First Class with Distinction</td>
-        <td>1988-89</td>
-      </tr>
-      <tr>
-        <td>03</td>
-        <td>BE Electronics</td>
-        <td>Walchand College of Engineering, Sangli</td>
-        <td>60%</td>
-        <td>First Class</td>
-        <td>1990-93</td>
-      </tr>
-      <tr>
-        <td>04</td>
-        <td>ME Electronics & Telecommunication</td>
-        <td>KIT, Kolhapur</td>
-        <td>73.5%</td>
-        <td>First Class with Distinction</td>
-        <td>2020</td>
-      </tr>
-      <tr>
-        <td>05</td>
-        <td>PG in Artificial Intelligence & Machine Learning</td>
-        <td>IIIT, Lucknow</td>
-        <td>CGPA 9</td>
-        <td>First Class with Distinction</td>
-        <td>2025</td>
-      </tr>
-    </table>
-
-    <h2>Work Experience:</h2>
-    <table>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Name of the College/Company</th>
-        <th>Designation</th>
-        <th>Experience in Years</th>
-        <th>From</th>
-        <th>To</th>
-      </tr>
-      <tr>
-        <td>01</td>
-        <td>Gujrat HI-REL Controls Ltd.</td>
-        <td>Service & Production Engineer</td>
-        <td>1 year</td>
-        <td>16/05/1994</td>
-        <td>30/04/1995</td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>Rajaram Shinde Institute of Engineering & Technology</td>
-        <td>Lecturer</td>
-        <td>1 year</td>
-        <td>01/08/1995</td>
-        <td>31/07/1996</td>
-      </tr>
-      <tr>
-        <td>03</td>
-        <td>Rajaram Shinde College of Engineering</td>
-        <td>Lecturer, Head of Electronics Engineering Department, Chief Conductor of Examinations, Controller of Examinations, In-charge Principal</td>
-        <td>13 years</td>
-        <td>01/08/1996</td>
-        <td>05/04/2009</td>
-      </tr>
-      <tr>
-        <td>04</td>
-        <td>Gharda Institute of Technology</td>
-        <td>Head of Information Technology Department, Chief Conductor of Examinations, Controller of Examinations, Training and Placement Officer, Admission In-charge, In-charge Principal</td>
-        <td>16 years</td>
-        <td>06/04/2009</td>
-        <td>Till Date</td>
-      </tr>
-    </table>
-
-    <h2>Total Experience:</h2>
-    <p>31 years</p>
-
-    <h2>Membership:</h2>
-    <ol>
-      <li>Life Member of Indian Society for Technical Education (ISTE), Membership No. LM76736.</li>
-      <li>Member of the International Association of Engineers (IAENG), Membership No. 160179.</li>
-      <li>Member of Institute of Doctors Engineers & Scientists (IDES), Membership No. 1184.</li>
-    </ol>
-
-    <h2>Subjects Taught:</h2>
-    <ol>
-      <li>Computer Communication & Networks</li>
-      <li>Computer Networks</li>
-      <li>Cryptography and System Security Practicals</li>
-      <li>Data Warehousing & Mining</li>
-      <li>Digital Image & Signal Processing</li>
-      <li>Digital Logic Design & Applications</li>
-      <li>Digital Logic Design & Computer Organization & Architecture</li>
-      <li>Electrical Networks</li>
-      <li>Electronics System Design & Practice</li>
-      <li>Image & Video Processing</li>
-      <li>Image Processing & Machine Vision</li>
-      <li>Information Retrieval</li>
-      <li>Information Technology & Management of Enterprises</li>
-      <li>Internet & Voice Communication</li>
-      <li>Internet Communication Engineering</li>
-      <li>Introduction to System Design</li>
-      <li>Machine Learning</li>
-      <li>Microprocessor</li>
-      <li>Microwave & Radar Engineering</li>
-      <li>Mobile Computing</li>
-      <li>Operating Systems</li>
-      <li>Principles of Communication Engineering</li>
-      <li>RF Modeling & Antennas</li>
-      <li>Satellite Communication</li>
-      <li>Skill Lab: Python Programming</li>
-      <li>Wireless Networks</li>
-    </ol>
-
-    <h2>Papers Published:</h2>
-    <table>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Title of the Paper</th>
-        <th>Journal/Conference</th>
-        <th>Month</th>
-        <th>Year</th>
-        <th>Type</th>
-      </tr>
-      <tr>
-        <td>01</td>
-        <td>Cross Layer Design for Local Wireless Area Network</td>
-        <td>International Conference on Computing, Communication and Energy System</td>
-        <td>January</td>
-        <td>2016</td>
-        <td>Conference</td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>Routing Protocols in Wireless Local Area Networks (WLANs)</td>
-        <td>Seventh International Conference on Recent Trends in Information, Telecommunication & Computing - ITC 2016</td>
-        <td>March</td>
-        <td>2016</td>
-        <td>Conference</td>
-      </tr>
-      <tr>
-        <td>03</td>
-        <td>Overview of 802.11 Power Saving Mechanisms</td>
-        <td>International Journal on Recent and Innovation Trends in Computing and Communication (IJRITCC)</td>
-        <td>November</td>
-        <td>2015</td>
-        <td>Journal</td>
-      </tr>
-      <tr>
-        <td>04</td>
-        <td>Image Compression using DCT</td>
-        <td>International Journal of Engineering Research & Industrial Application</td>
-        <td>July</td>
-        <td>2009</td>
-        <td>Journal</td>
-      </tr>
-      <tr>
-        <td>05</td>
-        <td>Analyzing the Impact of Beacon Order and Superframe Order on Energy Consumption and Throughput in 802.15.4 Cluster Networks</td>
-        <td>Scienxt Journal of Computer Communication & Network Security (SJCCNS)</td>
-        <td>September</td>
-        <td>2024</td>
-        <td>Journal</td>
-      </tr>
-    </table>
-
-    <h2>Articles Published in Popular Media:</h2>
-    <p>Published articles in the Marathi daily Sakal on topics related to Computer Science and Artificial Intelligence:</p>
-
-    <ol>
-      <li>
-        <a href="https://www.esakal.com/kokan/ip-address-the-peaceful-hero-of-the-internet-world-sdj87" target="_blank">
-          IP Address in Internet
+    <div class="card">
+      <div class="ch">
+        <div class="ch-icon" style="background:#fff8e1;">🔗</div>
+        <h3>Online Presence</h3>
+      </div>
+      <div class="cb">
+        <a href="https://www.linkedin.com/in/sd-l-bab7953b6" target="_blank" class="plink">
+          <div class="plink-dot" style="background:#0077b5;"></div>LinkedIn Profile
         </a>
-      </li>
-
-      <li>
-        <a href="https://drive.google.com/file/d/1OGhfC7ImjMSeJ1rUl0ap_yMhK86cOb3P/view?usp=drive_link" target="_blank">
-          Domain Name System (DNS)
+        <a href="https://sdlatkar.github.io/profile/" target="_blank" class="plink">
+          <div class="plink-dot" style="background:#2ea44f;"></div>Personal Website
         </a>
-      </li>
-
-      <li>
-        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c63727-txt-ratnagiri-20250215103033" target="_blank">
-          Dynamic Host Configuration Protocol (DHCP)
+        <a href="https://drive.google.com/file/d/1dhlVo-cVrZ0MQrLrTxcd9pFXWEDLHa4W/view" target="_blank" class="plink">
+          <div class="plink-dot" style="background:#ea4335;"></div>NPTEL Book Translation
         </a>
-      </li>
-
-      <li>
-        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c68106-txt-ratnagiri-20250301092219" target="_blank">
-          MAC Address
+        <a href="https://www.youtube.com/live/u8C104J6OEk?feature=share" target="_blank" class="plink">
+          <div class="plink-dot" style="background:#ff0000;"></div>Convocation Ceremony 2023
         </a>
-      </li>
+      </div>
+    </div>
 
-      <li>
-        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c79954-txt-ratnagiri-today-20250408094139" target="_blank">
-          Machine Learning
+  </aside>
+
+  <main class="main">
+
+    <section id="summary">
+      <div class="sec-head">
+        <div class="sec-icon">👤</div>
+        <h2>Professional Profile</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="philosophy">
+        <div class="philosophy-text">
+          A seasoned academic professional with over three decades of experience in technical education, research, academic administration and institutional development. Dedicated to nurturing the next generation of engineers and technologists by connecting strong academic foundations with the evolving frontiers of Artificial Intelligence and Machine Learning.
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="phil-item">
+            <div class="phil-num">30+</div>
+            <div class="phil-label">Years Teaching</div>
+          </div>
+          <div class="phil-item">
+            <div class="phil-num">5</div>
+            <div class="phil-label">Research Papers</div>
+          </div>
+          <div class="phil-item">
+            <div class="phil-num">26</div>
+            <div class="phil-label">Subjects Taught</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-h">Areas of Specialization</div>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="spec-icon">🤖</div>
+          <div class="spec-title">Artificial Intelligence &amp; Machine Learning</div>
+          <div class="spec-desc">PG qualification from IIIT Lucknow with CGPA 9, with focus on machine learning, deep learning and AI applications.</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">📡</div>
+          <div class="spec-title">Wireless Networks &amp; Communication</div>
+          <div class="spec-desc">Research work in WLAN, routing protocols, 802.11 power saving mechanisms and 802.15.4 cluster networks.</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🖼️</div>
+          <div class="spec-title">Image &amp; Signal Processing</div>
+          <div class="spec-desc">Experience in image compression, digital image processing, signal processing and machine vision.</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🏛️</div>
+          <div class="spec-title">Academic Administration &amp; Accreditation</div>
+          <div class="spec-desc">Experience in academic administration, examination work, IQAC, NAAC, NBA and institutional responsibilities.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="sec-head">
+        <div class="sec-icon">🎓</div>
+        <h2>Academic Qualifications</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table class="etable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Qualification</th>
+                <th>Institution</th>
+                <th>Marks / CGPA</th>
+                <th>Class</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+                <td>1</td>
+                <td>BE — Electronics Engineering</td>
+                <td>Walchand College of Engineering, Sangli</td>
+                <td><strong>60%</strong></td>
+                <td><span class="badge-fc">First Class</span></td>
+                <td>1990–93</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>ME — Electronics &amp; Telecommunication</td>
+                <td>KIT, Kolhapur</td>
+                <td><strong>73.5%</strong></td>
+                <td><span class="badge-dist">First Class with Distinction</span></td>
+                <td>2020</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>PG — Artificial Intelligence &amp; Machine Learning <span class="badge-note">Latest</span></td>
+                <td>IIIT, Lucknow</td>
+                <td><strong>CGPA 9.0</strong></td>
+                <td><span class="badge-dist">First Class with Distinction</span></td>
+                <td>2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head">
+        <div class="sec-icon">💼</div>
+        <h2>Professional Experience</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="card">
+        <div class="cb">
+          <div class="timeline">
+
+            <div class="titem">
+              <div class="tdot tdot-teal"></div>
+              <div class="tperiod">06 April 2009 — Present · 16+ Years</div>
+              <div class="torg">Gharda Institute of Technology, Lavel, Maharashtra</div>
+              <div class="trole">Academic, examination, admission, training and placement, accreditation and institutional responsibilities.</div>
+              <div class="tackiev">
+                <span class="tachiev-item">NAAC Criteria Coordinator</span>
+                <span class="tachiev-item">NBA Criteria Coordinator</span>
+                <span class="tachiev-item">IQAC Work</span>
+                <span class="tachiev-item">University of Mumbai Syllabus Committee</span>
+              </div>
+              <span class="texp">Currently Active</span>
+            </div>
+
+            <div class="titem">
+              <div class="tdot tdot-gray"></div>
+              <div class="tperiod">01 August 1996 — 05 April 2009 · 13 Years</div>
+              <div class="torg">Rajaram Shinde College of Engineering</div>
+              <div class="trole">Lecturer, departmental academic responsibilities, examination responsibilities and institutional responsibilities.</div>
+              <span class="texp">13 Years</span>
+            </div>
+
+            <div class="titem">
+              <div class="tdot tdot-gray"></div>
+              <div class="tperiod">01 August 1995 — 31 July 1996 · 1 Year</div>
+              <div class="torg">Rajaram Shinde Institute of Engineering &amp; Technology</div>
+              <div class="trole">Lecturer.</div>
+              <span class="texp">1 Year</span>
+            </div>
+
+            <div class="titem">
+              <div class="tdot tdot-gray"></div>
+              <div class="tperiod">16 May 1994 — 30 April 1995 · 1 Year</div>
+              <div class="torg">Gujrat HI-REL Controls Ltd.</div>
+              <div class="trole">Service &amp; Production Engineer.</div>
+              <span class="texp">Industry Role</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="sec-head">
+        <div class="sec-icon">🔬</div>
+        <h2>Research &amp; Publications</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="papers">
+        <div class="paper">
+          <div class="paper-title">Analyzing the Impact of Beacon Order and Superframe Order on Energy Consumption and Throughput in 802.15.4 Cluster Networks</div>
+          <div class="paper-venue">Scienxt Journal of Computer Communication &amp; Network Security (SJCCNS)</div>
+          <div class="paper-tags">
+            <span class="ptag ptag-j">Journal</span>
+            <span class="ptag ptag-new">September 2024</span>
+            <span class="ptag ptag-y">Wireless Sensor Networks</span>
+          </div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-title">Cross Layer Design for Local Wireless Area Network</div>
+          <div class="paper-venue">International Conference on Computing, Communication and Energy System</div>
+          <div class="paper-tags">
+            <span class="ptag ptag-c">Conference</span>
+            <span class="ptag ptag-y">January 2016</span>
+          </div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-title">Routing Protocols in Wireless Local Area Networks (WLANs)</div>
+          <div class="paper-venue">Seventh International Conference on Recent Trends in Information, Telecommunication &amp; Computing — ITC 2016</div>
+          <div class="paper-tags">
+            <span class="ptag ptag-c">Conference</span>
+            <span class="ptag ptag-y">March 2016</span>
+          </div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-title">Overview of 802.11 Power Saving Mechanisms</div>
+          <div class="paper-venue">International Journal on Recent and Innovation Trends in Computing and Communication (IJRITCC)</div>
+          <div class="paper-tags">
+            <span class="ptag ptag-j">Journal</span>
+            <span class="ptag ptag-y">November 2015</span>
+          </div>
+        </div>
+
+        <div class="paper">
+          <div class="paper-title">Image Compression using DCT</div>
+          <div class="paper-venue">International Journal of Engineering Research &amp; Industrial Application</div>
+          <div class="paper-tags">
+            <span class="ptag ptag-j">Journal</span>
+            <span class="ptag ptag-y">July 2009</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:16px;">
+        <strong>Book Contribution:</strong> Worked in Marathi translation of the book “Introduction to Operating Systems” of NPTEL.
+        <a href="https://drive.google.com/file/d/1dhlVo-cVrZ0MQrLrTxcd9pFXWEDLHa4W/view" target="_blank">View</a>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="sec-head">
+        <div class="sec-icon">✍️</div>
+        <h2>Articles Published in Popular Media</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">
+        Published articles in Marathi daily Sakal on topics related to Computer Science and Artificial Intelligence.
+      </p>
+
+      <div class="articles">
+        <a href="https://www.esakal.com/kokan/ip-address-the-peaceful-hero-of-the-internet-world-sdj87" target="_blank" class="art-link">
+          <div class="art-num">1</div>
+          <div>
+            <div class="art-title">IP Address in Internet</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
 
-      <li>
-        <a href="https://www.esakal.com/kokan/artificial-intelligence-ushering-the-world-into-a-new-era-sdj87" target="_blank">
-          Artificial Intelligence
+        <a href="https://drive.google.com/file/d/1OGhfC7ImjMSeJ1rUl0ap_yMhK86cOb3P/view?usp=drive_link" target="_blank" class="art-link">
+          <div class="art-num">2</div>
+          <div>
+            <div class="art-title">Domain Name System (DNS)</div>
+            <div class="art-lang">Marathi · Sakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
 
-      <li>
-        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c88130-txt-ratnagiri-today-20250506093755" target="_blank">
-          Deep Learning
+        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c63727-txt-ratnagiri-20250215103033" target="_blank" class="art-link">
+          <div class="art-num">3</div>
+          <div>
+            <div class="art-title">Dynamic Host Configuration Protocol (DHCP)</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
-    </ol>
 
-    <h2>Books:</h2>
-    <ol>
-      <li>
-        <a href="https://drive.google.com/file/d/1dhlVo-cVrZ0MQrLrTxcd9pFXWEDLHa4W/view" target="_blank">
-          Worked in Marathi translation of the book “Introduction to Operating Systems” of NPTEL
+        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c68106-txt-ratnagiri-20250301092219" target="_blank" class="art-link">
+          <div class="art-num">4</div>
+          <div>
+            <div class="art-title">MAC Address</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
-    </ol>
 
-    <h2>Courses Completed:</h2>
-    <ol>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/certificate/FTH629ZFSQSS" target="_blank">
-          Automating Team Communication with Google Sheets and Apps Script
+        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c79954-txt-ratnagiri-today-20250408094139" target="_blank" class="art-link">
+          <div class="art-num">5</div>
+          <div>
+            <div class="art-title">Machine Learning</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/certificate/UBXVKN7DCXV3" target="_blank">
-          The seven-week course on “Programming for Everybody (Getting Started with Python)” on the Coursera platform offered by University of Michigan
+
+        <a href="https://www.esakal.com/kokan/artificial-intelligence-ushering-the-world-into-a-new-era-sdj87" target="_blank" class="art-link">
+          <div class="art-num">6</div>
+          <div>
+            <div class="art-title">Artificial Intelligence</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
-      <li>
-        <a href="https://www.coursera.org/account/accomplishments/certificate/B55H2J4T4MAZ" target="_blank">
-          The six-week course on “The Bits and Bytes of Computer Networking” on the Coursera platform offered by Google
+
+        <a href="https://www.esakal.com/kokan/todays-latest-marathi-news-kop25c88130-txt-ratnagiri-today-20250506093755" target="_blank" class="art-link">
+          <div class="art-num">7</div>
+          <div>
+            <div class="art-title">Deep Learning</div>
+            <div class="art-lang">Marathi · eSakal</div>
+          </div>
+          <div class="art-arr">→</div>
         </a>
-      </li>
-    </ol>
+      </div>
+    </section>
 
-    <h2>Lectures Delivered:</h2>
-    <ul>
-      <li>Lecture delivered on “Employability of Student & Role of a Teacher” in Gharda Institute of Technology.</li>
-      <li>Lecture delivered on “Network Models” in Sahyadri Polytechnic, Sawarde.</li>
-    </ul>
+    <section id="teaching">
+      <div class="sec-head">
+        <div class="sec-icon">📚</div>
+        <h2>Teaching Portfolio</h2>
+        <div class="sec-line"></div>
+      </div>
 
-    <h2>Lectures Attended:</h2>
-    <ul>
-      <li>Lecture on “Anti Collision Device” delivered by Mr. S. N. Todkar, Konkan Railway, at Gharda Institute of Technology.</li>
-      <li>Lecture on “CCNA Courses and Career” delivered by Mr. Rohit Pardasiniya of ACIT Mahim at Gharda Institute of Technology.</li>
-    </ul>
+      <div class="card">
+        <div class="cb">
+          <div class="sub-grid">
+            <div class="sub">Computer Communication &amp; Networks</div>
+            <div class="sub">Computer Networks</div>
+            <div class="sub">Cryptography and System Security Practicals</div>
+            <div class="sub">Data Warehousing &amp; Mining</div>
+            <div class="sub">Digital Image &amp; Signal Processing</div>
+            <div class="sub">Digital Logic Design &amp; Applications</div>
+            <div class="sub">Digital Logic Design &amp; Computer Organization &amp; Architecture</div>
+            <div class="sub">Electrical Networks</div>
+            <div class="sub">Electronics System Design &amp; Practice</div>
+            <div class="sub">Image &amp; Video Processing</div>
+            <div class="sub">Image Processing &amp; Machine Vision</div>
+            <div class="sub">Information Retrieval</div>
+            <div class="sub">Information Technology &amp; Management of Enterprises</div>
+            <div class="sub">Internet &amp; Voice Communication</div>
+            <div class="sub">Internet Communication Engineering</div>
+            <div class="sub">Introduction to System Design</div>
+            <div class="sub">Machine Learning</div>
+            <div class="sub">Microprocessor</div>
+            <div class="sub">Microwave &amp; Radar Engineering</div>
+            <div class="sub">Mobile Computing</div>
+            <div class="sub">Operating Systems</div>
+            <div class="sub">Principles of Communication Engineering</div>
+            <div class="sub">RF Modeling &amp; Antennas</div>
+            <div class="sub">Satellite Communication</div>
+            <div class="sub">Skill Lab: Python Programming</div>
+            <div class="sub">Wireless Networks</div>
+          </div>
+        </div>
+      </div>
 
-    <h2>Webinars Attended:</h2>
-    <ul>
-      <li>A webinar on “Electric Vehicle” by Dr. Vaiju Kalkhambkar, HOD Electrical Engineering Department, Rajarambapu Institute of Technology, Rajaramnagar, Islampur.</li>
-      <li>Huawei Asia Pacific ICT Talent Forum 2020 Webinar from 1.30 pm to 2.35 pm on 4 August 2020.</li>
-      <li>Systematic Data Organization in Revised Accreditation Framework of NAAC on 28 February 2021.</li>
-    </ul>
+      <div class="sub-h">Lectures &amp; Seminars Delivered</div>
+      <div class="acts">
+        <div class="act"><div class="act-bul"></div>Lecture delivered on “Employability of Student &amp; Role of a Teacher” in Gharda Institute of Technology.</div>
+        <div class="act"><div class="act-bul"></div>Lecture delivered on “Network Models” in Sahyadri Polytechnic, Sawarde.</div>
+        <div class="act"><div class="act-bul"></div>Seminar delivered on “Simulation of the Internet” at M.E. I Semester.</div>
+        <div class="act"><div class="act-bul"></div>Seminar delivered on “IP over the Wireless Network” at M.E. II Semester.</div>
+        <div class="act"><div class="act-bul"></div>Seminar delivered on “TCP/IP Header Compression” at M.E. III Semester.</div>
+        <div class="act"><div class="act-bul"></div>Seminar delivered on “Network Models” in Principal Conference at Gharda Institute of Technology.</div>
+      </div>
+    </section>
 
-    <h2>Seminars Attended:</h2>
-    <ul>
-      <li>“MATLAB & Simulink for Engineering Education” by Mathworks India Pvt. Ltd.</li>
-    </ul>
+    <section id="training">
+      <div class="sec-head">
+        <div class="sec-icon">🏫</div>
+        <h2>Professional Development</h2>
+        <div class="sec-line"></div>
+      </div>
 
-    <h2>Seminars Delivered:</h2>
-    <ul>
-      <li>“Simulation of the Internet” at M.E. I Semester.</li>
-      <li>“IP over the Wireless Network” at M.E. II Semester.</li>
-      <li>“TCP/IP Header Compression” at M.E. III Semester.</li>
-      <li>“Network Models” in Principal Conference at Gharda Institute of Technology.</li>
-    </ul>
+      <div class="card">
+        <div style="overflow-x:auto;">
+          <table class="wtable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Program</th>
+                <th>Institution / Venue</th>
+                <th>Duration</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Communication in English by Miss. Maya Putois</td><td>GIT, Lavel</td><td><span class="dur">Half Day</span></td><td>2010–11</td></tr>
+              <tr><td>2</td><td>Spectrum — Developing Multidimensional Competencies in Teachers</td><td>VIIT, Pune</td><td><span class="dur">One Week</span></td><td>2010–11</td></tr>
+              <tr><td>3</td><td>Teacher's Training Program by Dr. Deodhar</td><td>GIT, Lavel</td><td><span class="dur">One Day</span></td><td>2010–11</td></tr>
+              <tr><td>4</td><td>National Workshop on LaTeX</td><td>GIT, Lavel</td><td><span class="dur">Two Days</span></td><td>2011–12</td></tr>
+              <tr><td>5</td><td>Introduction to Research Methodologies</td><td>IIT Bombay</td><td><span class="dur iit">Two Weeks</span></td><td>2012–13</td></tr>
+              <tr><td>6</td><td>Aakash for Education</td><td>IIT Bombay</td><td><span class="dur iit">Two Days</span></td><td>2012–13</td></tr>
+              <tr><td>7</td><td>Loophole Ethical Hacking Workshop</td><td>Kyrion Digital Securities Pvt. Ltd.</td><td><span class="dur">Two Days</span></td><td>2012–13</td></tr>
+              <tr><td>8</td><td>Database Management Systems</td><td>IIT Bombay</td><td><span class="dur iit">Two Weeks</span></td><td>2012–13</td></tr>
+              <tr><td>9</td><td>Analog Electronics</td><td>IIT Kharagpur</td><td><span class="dur iit">Two Weeks</span></td><td>2013–14</td></tr>
+              <tr><td>10</td><td>National Workshop on Cloud Computing</td><td>GIT, Lavel</td><td><span class="dur">Two Days</span></td><td>2013–14</td></tr>
+              <tr><td>11</td><td>Two Weeks ISTE Workshop on Signals &amp; Systems</td><td>IIT Kharagpur</td><td><span class="dur iit">Two Weeks</span></td><td>2013–14</td></tr>
+              <tr><td>12</td><td>Computer Programming</td><td>IIT Bombay</td><td><span class="dur iit">Two Weeks</span></td><td>2013–14</td></tr>
+              <tr><td>13</td><td>Computer Networking</td><td>ISTE Workshop</td><td><span class="dur">Two Weeks</span></td><td>2014–15</td></tr>
+              <tr><td>14</td><td>Orientation Program on Image &amp; Video Processing</td><td>IIT Bombay</td><td><span class="dur iit">One Day</span></td><td>2015–16</td></tr>
+              <tr><td>15</td><td>Basic Matlab &amp; Simulink, Computer Vision Toolbox &amp; Machine Vision Toolbox</td><td>GIT, Lavel</td><td><span class="dur">One Day</span></td><td>2015–16</td></tr>
+              <tr><td>16</td><td>Satellite Communication</td><td>Institute of Satellite Telecommunication Pvt. Ltd.</td><td><span class="dur">Two Days</span></td><td>2016–17</td></tr>
+              <tr><td>17</td><td>Prime Minister Fellowship Scheme for Doctoral Research</td><td>DST-SERB &amp; CII New Delhi</td><td><span class="dur">One Day</span></td><td>2016–17</td></tr>
+              <tr><td>18</td><td>CMOS, Mixed Signal and Radio Frequency VLSI Design</td><td>IIT Kharagpur</td><td><span class="dur iit">Two Weeks</span></td><td>2016–17</td></tr>
+              <tr><td>19</td><td>Internet of Things</td><td>GIT, Lavel</td><td><span class="dur">One Week</span></td><td>2017–18</td></tr>
+              <tr><td>20</td><td>NETSIM V10</td><td>D. Y. Patil College of Engineering &amp; Technology, Kolhapur</td><td><span class="dur">Two Days</span></td><td>2017–18</td></tr>
+              <tr><td>21</td><td>Moodle Learning Management System</td><td>Online</td><td><span class="dur">One Week</span></td><td>2019–20</td></tr>
+              <tr><td>22</td><td>Accreditation</td><td>GIT, Lavel</td><td><span class="dur">Half Day</span></td><td>—</td></tr>
+              <tr><td>23</td><td>NBA Orientation Program on Accreditation</td><td>PVG College of Engineering &amp; Technology, Pune</td><td><span class="dur">Two Days</span></td><td>—</td></tr>
+              <tr><td>24</td><td>Event Management</td><td>GIT, Lavel</td><td><span class="dur">Two Days</span></td><td>—</td></tr>
+              <tr><td>25</td><td>Advanced Internet Technology</td><td>GIT, Lavel</td><td><span class="dur">One Week</span></td><td>2023–24</td></tr>
+              <tr><td>26</td><td>Inculcating Universal Human Values in Technical Education</td><td>GIT, Lavel</td><td><span class="dur">Three Days</span></td><td>2024–25</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-    <h2>Conferences Attended:</h2>
-    <table>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Name of the Conference</th>
-        <th>Venue</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Duration</th>
-      </tr>
-      <tr>
-        <td>01</td>
-        <td>Towards Quality Engineering Education</td>
-        <td>PIET Pune, AISSMS College of Engineering Pune, and RSCOE Pune</td>
-        <td>12-Feb-2015</td>
-        <td>12-Feb-2015</td>
-        <td>One Day</td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>Role of Institutes in Providing Quality Manpower to Oil & Gas, Petrochemical and Chemical Sector</td>
-        <td>MIT, Pune</td>
-        <td>02-Mar-2012</td>
-        <td>02-Mar-2012</td>
-        <td>One Day</td>
-      </tr>
-      <tr>
-        <td>03</td>
-        <td>Recent Advances in Engineering & Technology</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>15-Nov-2013</td>
-        <td>16-Nov-2013</td>
-        <td>Two Days</td>
-      </tr>
-    </table>
+      <div class="sub-h">Online Certifications</div>
 
-    <h2>Workshops/STTPs/FDPs Attended:</h2>
-    <table>
-      <tr>
-        <th>Sr. No.</th>
-        <th>Name of the Workshop/STTP/FDP</th>
-        <th>Venue</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Duration</th>
-        <th>Academic Year</th>
-        <th>Remarks</th>
-      </tr>
-      <tr>
-        <td>01</td>
-        <td>Communication in English by Miss. Maya Putois</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>22-Aug-2010</td>
-        <td>22-Aug-2010</td>
-        <td>Half Day</td>
-        <td>2010-11</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>02</td>
-        <td>Spectrum - Developing Multidimensional Competencies in Teachers</td>
-        <td>Vishwakarma Institute of Information Technology, Pune</td>
-        <td>06-Dec-2010</td>
-        <td>10-Dec-2010</td>
-        <td>One Week</td>
-        <td>2010-11</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>03</td>
-        <td>Teacher's Training Program by Dr. Deodhar</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>18-Apr-2011</td>
-        <td>18-Apr-2011</td>
-        <td>One Day</td>
-        <td>2010-11</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>04</td>
-        <td>National Workshop on LaTeX</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>16-Mar-2012</td>
-        <td>17-Mar-2012</td>
-        <td>Two Days</td>
-        <td>2011-12</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>05</td>
-        <td>Introduction to Research Methodologies Workshop</td>
-        <td>IIT, Mumbai</td>
-        <td>25-Jun-2012</td>
-        <td>04-Jul-2012</td>
-        <td>Two Weeks</td>
-        <td>2012-13</td>
-        <td>In association with IIT Mumbai</td>
-      </tr>
-      <tr>
-        <td>06</td>
-        <td>Aakash for Education</td>
-        <td>IIT, Mumbai</td>
-        <td>10-Nov-2012</td>
-        <td>11-Nov-2012</td>
-        <td>Two Days</td>
-        <td>2012-13</td>
-        <td>IIT Mumbai</td>
-      </tr>
-      <tr>
-        <td>07</td>
-        <td>Loophole Ethical Hacking Workshop</td>
-        <td>Kyrion Digital Securities Pvt. Ltd.</td>
-        <td>11-Feb-2013</td>
-        <td>12-Feb-2013</td>
-        <td>Two Days</td>
-        <td>2012-13</td>
-        <td>Conducted by Kyrion Digital Securities Pvt. Ltd.</td>
-      </tr>
-      <tr>
-        <td>08</td>
-        <td>Database Management Systems</td>
-        <td>IIT, Mumbai</td>
-        <td>21-May-2013</td>
-        <td>31-May-2013</td>
-        <td>Two Weeks</td>
-        <td>2012-13</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>09</td>
-        <td>Analog Electronics</td>
-        <td>IIT, Kharagpur</td>
-        <td>04-Jul-2013</td>
-        <td>14-Jul-2013</td>
-        <td>Two Weeks</td>
-        <td>2013-14</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>National Workshop on Cloud Computing</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>25-Jul-2013</td>
-        <td>27-Jul-2013</td>
-        <td>Two Days</td>
-        <td>2013-14</td>
-        <td>Department of Information Technology</td>
-      </tr>
-      <tr>
-        <td>11</td>
-        <td>Two Weeks ISTE Workshop on Signals & Systems</td>
-        <td>IIT, Kharagpur</td>
-        <td>02-Jan-2014</td>
-        <td>12-Jan-2014</td>
-        <td>Two Weeks</td>
-        <td>2013-14</td>
-        <td>ISTE Approved FDP</td>
-      </tr>
-      <tr>
-        <td>12</td>
-        <td>Computer Programming</td>
-        <td>IIT, Mumbai</td>
-        <td>20-May-2014</td>
-        <td>21-Jul-2014</td>
-        <td>Two Weeks</td>
-        <td>2013-14</td>
-        <td>IIT Mumbai, offline and online participation</td>
-      </tr>
-      <tr>
-        <td>13</td>
-        <td>Computer Networking</td>
-        <td></td>
-        <td>30-Jun-2014</td>
-        <td>05-Jul-2014</td>
-        <td>Two Weeks</td>
-        <td>2014-15</td>
-        <td>Two Week ISTE Workshop</td>
-      </tr>
-      <tr>
-        <td>14</td>
-        <td>Orientation Program on Image & Video Processing</td>
-        <td>IIT, Mumbai</td>
-        <td>17-Jul-2015</td>
-        <td>17-Jul-2015</td>
-        <td>One Day</td>
-        <td>2015-16</td>
-        <td>Orientation Program</td>
-      </tr>
-      <tr>
-        <td>15</td>
-        <td>Basic Matlab & Simulink, Computer Vision Toolbox & Machine Vision Toolbox</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>28-Sep-2015</td>
-        <td>28-Sep-2015</td>
-        <td>One Day</td>
-        <td>2015-16</td>
-        <td>ADCC Infotech</td>
-      </tr>
-      <tr>
-        <td>16</td>
-        <td>Satellite Communication</td>
-        <td>Institute of Satellite Telecommunication Pvt. Ltd.</td>
-        <td>30-Jul-2016</td>
-        <td>01-Oct-2016</td>
-        <td>Two Days</td>
-        <td>2016-17</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>17</td>
-        <td>Prime Minister Fellowship Scheme for Doctoral Research</td>
-        <td>DST-SERB & CII New Delhi and D. Y. Patil Education Society Deemed University, Kolhapur</td>
-        <td>25-Nov-2016</td>
-        <td>25-Nov-2016</td>
-        <td>One Day</td>
-        <td>2016-17</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>18</td>
-        <td>CMOS, Mixed Signal and Radio Frequency VLSI Design</td>
-        <td>IIT, Kharagpur</td>
-        <td>30-Jan-2017</td>
-        <td>04-Feb-2017</td>
-        <td>Two Weeks</td>
-        <td>2016-17</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>19</td>
-        <td>Internet of Things</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>01-Jan-2018</td>
-        <td>05-Jan-2018</td>
-        <td>One Week</td>
-        <td>2017-18</td>
-        <td>ISTE Approved FDP</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>NETSIM: V10, A Simulation Platform for Research in Wireless, Ad Hoc Network & Mobile Communication</td>
-        <td>D. Y. Patil College of Engineering & Technology, Kolhapur</td>
-        <td>02-Feb-2018</td>
-        <td>03-Feb-2018</td>
-        <td>Two Days</td>
-        <td>2017-18</td>
-        <td>Department of Electronics</td>
-      </tr>
-      <tr>
-        <td>21</td>
-        <td>Moodle Learning Management System</td>
-        <td>Online</td>
-        <td>25-May-2020</td>
-        <td>30-May-2020</td>
-        <td>One Week</td>
-        <td>2019-20</td>
-        <td>Organized by J D College of Engineering & Management, Nagpur in association with Spoken Tutorial IIT Bombay</td>
-      </tr>
-      <tr>
-        <td>22</td>
-        <td>Accreditation</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td></td>
-        <td></td>
-        <td>Half Day</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>23</td>
-        <td>NBA Orientation Program on Accreditation</td>
-        <td>Pune Vidyarthi Griha’s College of Engineering & Technology, Pune</td>
-        <td></td>
-        <td></td>
-        <td>Two Days</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>24</td>
-        <td>Event Management</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td></td>
-        <td></td>
-        <td>Two Days</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>25</td>
-        <td>Advanced Internet Technology</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>03-Jul-2023</td>
-        <td>07-Jul-2023</td>
-        <td>One Week</td>
-        <td>2023-24</td>
-        <td>STTP, ISTE Approved</td>
-      </tr>
-      <tr>
-        <td>26</td>
-        <td>Inculcating Universal Human Values in Technical Education</td>
-        <td>Gharda Institute of Technology, Lavel</td>
-        <td>01-Jul-2024</td>
-        <td>03-Jul-2024</td>
-        <td>Three Days</td>
-        <td>2024-25</td>
-        <td>FDP, AICTE</td>
-      </tr>
-    </table>
+      <div class="card">
+        <div class="cb">
+          <div class="courses">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/FTH629ZFSQSS" target="_blank" class="course">
+              <div class="c-check">✓</div>
+              <div>
+                <div class="c-text">Automating Team Communication with Google Sheets and Apps Script</div>
+                <div class="c-provider">Coursera</div>
+              </div>
+            </a>
 
-    <h2>Administrative Activities:</h2>
-    <ul>
-      <li>Administrative work related to the yearly affiliation of University and AICTE.</li>
-      <li>F.E. Engineering and Direct Second Year Engineering Admissions including enrolments of students and preparation of merit list of DTE, working for the Facilitation Center.</li>
-      <li>Attended meetings of “Association of Unaided Engineering Colleges, Maharashtra State” on 12 and 13 September 2006.</li>
-      <li>Worked as a member of the organizing committee for arranging a workshop for non-technical staff at Gharda Institute of Technology.</li>
-      <li>Organizer for Two Day Workshop on “Skill Enhancement for Technical Assistants/Lab Assistants” organized by the Department of Applied Sciences and Humanities from 16-17 July 2011.</li>
-    </ul>
+            <a href="https://www.coursera.org/account/accomplishments/certificate/UBXVKN7DCXV3" target="_blank" class="course">
+              <div class="c-check">✓</div>
+              <div>
+                <div class="c-text">Programming for Everybody — Getting Started with Python</div>
+                <div class="c-provider">University of Michigan · Coursera</div>
+              </div>
+            </a>
 
-    <h2>Co-Curricular Activities:</h2>
-    <ul>
-      <li>Faculty orientation program on “Microwave Engineering” arranged by University of Mumbai on 11th July 2022.</li>
-      <li>Syllabus setting committee of University of Mumbai, 2021-22.</li>
-      <li>Faculty orientation program on “Skill Lab: Linux, Networking & Server Configuration” arranged by University of Mumbai on 15th January 2022.</li>
-      <li>Faculty orientation program on “Image Processing & Machine Vision” arranged by University of Mumbai on 13th January 2022.</li>
-      <li>Criteria Coordinator - NAAC.</li>
-      <li>Criteria Coordinator - NBA.</li>
-      <li>Data entry, menu formatting and giving information and data inputs for College Automation Software.</li>
-      <li>Additional course and accreditation work.</li>
-      <li>Coordinator for two days National Workshop on LaTeX conducted on 16 and 17 March 2012 at Gharda Institute of Technology, Lavel.</li>
-      <li>Worked as Chairman of Internal Quality Assurance Cell.</li>
-      <li>Member of Local Enquiry Committee, University of Mumbai, at Finolex Academy of Management and Technology for academic year 2018-19 on 5th April 2018.</li>
-      <li>Paper setter in the University Examination.</li>
-      <li>Alumni coordinator and arranged Alumni Meet.</li>
-      <li>Electronics Lab Demo in Disha Mission 2020 at Parshuram Education Society, Chiplun on 8 and 9 December 2017.</li>
-    </ul>
+            <a href="https://www.coursera.org/account/accomplishments/certificate/B55H2J4T4MAZ" target="_blank" class="course">
+              <div class="c-check">✓</div>
+              <div>
+                <div class="c-text">The Bits and Bytes of Computer Networking</div>
+                <div class="c-provider">Google · Coursera</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <h2>Extra-Curricular Activities:</h2>
-    <ul>
-      <li>Arranged two days Dandiya Program in Navratri Utsav for students of Gharda Institute of Technology, Lavel acting as the main coordinator in 2010.</li>
-      <li>Arranged Blood Donation Camps under the Information Technology Department at Gharda Institute of Technology, Lavel.</li>
-      <li>Worked as Chairman of Disaster Management Cell at Gharda Institute of Technology.</li>
-      <li>Participation in Blood Donation.</li>
-      <li>Worked as an anchor for the annual GIT staff gathering on 20 February 2016.</li>
-      <li>
-        <a href="https://www.youtube.com/live/u8C104J6OEk?feature=share" target="_blank">
-          Worked as an anchor for the Convocation Ceremony at GIT on 9th April 2023
-        </a>
-      </li>
-    </ul>
+      <div class="sub-h">Conferences Attended</div>
 
-    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+      <div class="conf-grid">
+        <div class="conf">
+          <div class="conf-name">Towards Quality Engineering Education</div>
+          <div class="conf-detail">PIET Pune, AISSMS College of Engineering Pune and RSCOE Pune</div>
+          <div class="conf-detail">12 February 2015 · One Day</div>
+        </div>
 
-  </body>
+        <div class="conf">
+          <div class="conf-name">Role of Institutes in Providing Quality Manpower to Oil &amp; Gas, Petrochemical and Chemical Sector</div>
+          <div class="conf-detail">MIT, Pune</div>
+          <div class="conf-detail">2 March 2012 · One Day</div>
+        </div>
+
+        <div class="conf">
+          <div class="conf-name">Recent Advances in Engineering &amp; Technology</div>
+          <div class="conf-detail">Gharda Institute of Technology, Lavel</div>
+          <div class="conf-detail">15–16 November 2013 · Two Days</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="membership">
+      <div class="sec-head">
+        <div class="sec-icon">🏅</div>
+        <h2>Professional Memberships</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="mems">
+        <div class="mem">
+          <div class="mem-icon">🎓</div>
+          <div>
+            <div class="mem-org">Indian Society for Technical Education (ISTE)</div>
+            <div class="mem-id">Life Member · Membership No. LM76736</div>
+          </div>
+        </div>
+
+        <div class="mem">
+          <div class="mem-icon">🌐</div>
+          <div>
+            <div class="mem-org">International Association of Engineers (IAENG)</div>
+            <div class="mem-id">Member · Membership No. 160179</div>
+          </div>
+        </div>
+
+        <div class="mem">
+          <div class="mem-icon">🔬</div>
+          <div>
+            <div class="mem-org">Institute of Doctors Engineers &amp; Scientists (IDES)</div>
+            <div class="mem-id">Member · Membership No. 1184</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="sec-head">
+        <div class="sec-icon">⚡</div>
+        <h2>Administrative &amp; Institutional Contributions</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="sub-h">Administrative Activities</div>
+      <div class="acts">
+        <div class="act"><div class="act-bul"></div>Administrative work related to yearly affiliation of University and AICTE.</div>
+        <div class="act"><div class="act-bul"></div>F.E. Engineering and Direct Second Year Engineering admissions including enrolments, merit list preparation and Facilitation Center work.</div>
+        <div class="act"><div class="act-bul"></div>Attended meetings of Association of Unaided Engineering Colleges, Maharashtra State on 12 and 13 September 2006.</div>
+        <div class="act"><div class="act-bul"></div>Worked as a member of organizing committee for arranging workshop for non-technical staff at GIT.</div>
+        <div class="act"><div class="act-bul"></div>Organizer for Two Day Workshop on Skill Enhancement for Technical Assistants and Lab Assistants.</div>
+      </div>
+
+      <div class="sub-h">Co-Curricular Activities</div>
+      <div class="acts">
+        <div class="act"><div class="act-bul"></div>Faculty orientation program on Microwave Engineering arranged by University of Mumbai.</div>
+        <div class="act"><div class="act-bul"></div>Syllabus setting committee of University of Mumbai, 2021–22.</div>
+        <div class="act"><div class="act-bul"></div>Faculty orientation program on Skill Lab: Linux, Networking and Server Configuration.</div>
+        <div class="act"><div class="act-bul"></div>Faculty orientation program on Image Processing and Machine Vision.</div>
+        <div class="act"><div class="act-bul"></div>Criteria Coordinator — NAAC.</div>
+        <div class="act"><div class="act-bul"></div>Criteria Coordinator — NBA.</div>
+        <div class="act"><div class="act-bul"></div>Worked as Chairman of Internal Quality Assurance Cell.</div>
+        <div class="act"><div class="act-bul"></div>Member of Local Enquiry Committee, University of Mumbai at FAMT, Ratnagiri.</div>
+        <div class="act"><div class="act-bul"></div>Paper Setter in University Examination.</div>
+        <div class="act"><div class="act-bul"></div>Alumni coordinator and arranged Alumni Meet.</div>
+      </div>
+
+      <div class="sub-h">Extra-Curricular Activities</div>
+      <div class="acts">
+        <div class="act"><div class="act-bul"></div>Arranged two days Dandiya Program in Navratri Utsav as main coordinator.</div>
+        <div class="act"><div class="act-bul"></div>Arranged Blood Donation Camps under Information Technology Department.</div>
+        <div class="act"><div class="act-bul"></div>Worked as Chairman of Disaster Management Cell at GIT.</div>
+        <div class="act"><div class="act-bul"></div>Participation in Blood Donation.</div>
+        <div class="act"><div class="act-bul"></div>Worked as anchor for annual GIT staff gathering on 20 February 2016.</div>
+        <div class="act"><div class="act-bul"></div><a href="https://www.youtube.com/live/u8C104J6OEk?feature=share" target="_blank">Worked as anchor for Convocation Ceremony at GIT on 9 April 2023.</a></div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  <p><strong>Prof. Sachin D. Latkar</strong> · Academic Portfolio · Gharda Institute of Technology</p>
+</footer>
+
+</body>
 </html>
