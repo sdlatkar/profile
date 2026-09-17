@@ -33,6 +33,8 @@
       --purple-pale: #f0ebfc;
       --aicte: #c45000;
       --aicte-pale: #fff4ee;
+      --ieee: #00629b;
+      --ieee-pale: #e8f3fa;
     }
 
     html { scroll-behavior: smooth; }
@@ -343,6 +345,56 @@
     }
     .c-provider-aicte { font-size: 11px; color: var(--aicte); font-weight: 600; }
     .cert-no { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    .appr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+
+    .appr-card {
+      background: var(--ieee-pale);
+      border: 1px solid rgba(0,98,155,0.2);
+      border-top: 4px solid var(--ieee);
+      border-radius: 10px;
+      padding: 18px 18px 16px;
+    }
+
+    .appr-role {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ieee);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .appr-conf {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-mid);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .appr-meta {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .appr-badge {
+      display: inline-block;
+      background: var(--ieee);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.4px;
+      margin-top: 8px;
+    }
 
     .conf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
     .conf {
@@ -1063,6 +1115,24 @@
         <div class="act"><div class="act-bul"></div>Member of Local Enquiry Committee, University of Mumbai at FAMT, Ratnagiri.</div>
         <div class="act"><div class="act-bul"></div>Paper Setter in University Examination.</div>
         <div class="act"><div class="act-bul"></div>Alumni coordinator and arranged Alumni Meet.</div>
+      </div>
+
+      <div class="sub-h">Certificates of Appreciation</div>
+
+      <div class="appr-grid">
+        <div class="appr-card">
+          <div class="appr-role">🪑 Session Chair</div>
+          <div class="appr-conf">2nd International Conference on Information, Implementation and Innovation in Technology (I2ITCON 2026)</div>
+          <div class="appr-meta">30th &amp; 31st July 2026 · I²IT, Pune<br>Technically sponsored by IEEE Pune Section</div>
+          <span class="appr-badge">IEEE Pune Section</span>
+        </div>
+
+        <div class="appr-card">
+          <div class="appr-role">🔍 Reviewer</div>
+          <div class="appr-conf">2nd International Conference on Information, Implementation and Innovation in Technology (I2ITCON 2026)</div>
+          <div class="appr-meta">30th &amp; 31st July 2026 · I²IT, Pune<br>Technically sponsored by IEEE Pune Section</div>
+          <span class="appr-badge">IEEE Pune Section</span>
+        </div>
       </div>
 
       <div class="sub-h">Extra-Curricular Activities</div>
